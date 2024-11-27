@@ -17,12 +17,21 @@ module memory_file(
             memory[i] = 32'b0; 
         end   
 
-        memory[3] = 32'd17;  
-        memory[7] = 32'd5;
+        // memory[3] = 32'd17;  
+        // memory[7] = 32'd5;
+        // memory[18] = 32'd99;
+        memory[0] = 32'd0;
+        memory[1] = 32'd1;
+        memory[2] = 32'd2;
+        memory[3] = 32'd3;
+        memory[4] = 32'd4;
+        memory[5] = 32'd5;
+        memory[6] = 32'd6;
+        memory[7] = 32'd7;
         memory[18] = 32'd99;
     end
 
-    always@(posedge clk) begin
+    always@(negedge clk) begin
         if(we == 1'b1) begin
             memory[addr] <= Din;
         end
