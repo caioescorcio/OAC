@@ -1,3 +1,5 @@
+#include <stdio.h>
+#include "matrices.h"
 void dgemm(int n, double* A, double* B, double* C)
 {
     for (int i = 0; i < n; ++i)
@@ -8,4 +10,9 @@ void dgemm(int n, double* A, double* B, double* C)
                 cij += A[i + k * n] * B[k + j * n]; /* cij += A[i][k] * B[k][j] */
             C[i + j * n] = cij; /* C[i][j] = cij */
         }
+}
+
+void main(){
+    
+    dgemm(10, A10, B10, C10);
 }

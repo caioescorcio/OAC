@@ -1,3 +1,4 @@
+#include "matrices.h"
 #include <x86intrin.h>
 #define UNROLL (4)
 #define BLOCKSIZE 32
@@ -29,4 +30,8 @@ for ( int sj = 0; sj < n; sj += BLOCKSIZE )
 for ( int si = 0; si < n; si += BLOCKSIZE )
 for ( int sk = 0; sk < n; sk += BLOCKSIZE )
 do_block(n, si, sj, sk, A, B, C);
+}
+
+void main(){
+    dgemm(10, A10, B10, C10);
 }

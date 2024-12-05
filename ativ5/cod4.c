@@ -1,3 +1,4 @@
+#include "matrices.h"
 #include <x86intrin.h>
 #define UNROLL (4)
 
@@ -20,4 +21,8 @@ _mm256_mul_pd(_mm256_load_pd(A+n*k+x*4+i), b));
 for ( int x = 0; x < UNROLL; x++ )
 _mm256_store_pd(C+i+x*4+j*n, c[x]);
 }
+}
+
+void main(){
+    dgemm(10, A10, B10, C10);
 }

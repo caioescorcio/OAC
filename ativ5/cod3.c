@@ -1,4 +1,5 @@
 #include <x86intrin.h>
+#include "matrices.h"
 
 void dgemm(size_t n, double* A, double* B, double* C)
 {
@@ -14,4 +15,8 @@ void dgemm(size_t n, double* A, double* B, double* C)
                       ));
             _mm256_store_pd(C + i + j * n, c0); /* C[i][j] = c0 */
         }
+}
+
+void main(){
+    dgemm(10, A10, B10, C10);
 }
