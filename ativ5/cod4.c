@@ -2,6 +2,7 @@
 #include <x86intrin.h>
 #define UNROLL (4)
 
+
 void dgemm (int n, double* A, double* B, double* C)
 {
 for ( int i = 0; i < n; i+=UNROLL*4 )
@@ -24,5 +25,6 @@ _mm256_store_pd(C+i+x*4+j*n, c[x]);
 }
 
 void main(){
-    dgemm(10, A10, B10, C10);
+    initialize_matrices();
+    dgemm(4, A4, B4, C4);
 }

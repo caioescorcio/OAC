@@ -4,7 +4,7 @@ import numpy as np
 
 # Leitura dos dados
 times = []
-for i in range(2):
+for i in range(5):
     filename = f"cod{i+1}_time.txt"
     with open(filename, "r") as f:
         times.append(f.read())

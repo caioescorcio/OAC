@@ -9,7 +9,7 @@
       "stopAtEntry": false,
       "externalConsole": false,
       "cwd": "/home/victor/Documentos/USP/OAC/ativ5",
-      "program": "/home/victor/Documentos/USP/OAC/ativ5/build/Debug/outDebug",
+      "program": "~/OAC/ativ5/cod4.c",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

@@ -15,7 +15,7 @@ rm cod5_time.txt
 for i in $(seq 1 $n_iter); do
     echo "Running iteration $i"
     start=$(date +%s%N)   # Get current time in nanoseconds
-    { time -p python cod1.py; } 
+    { time -p python3 cod1.py; } 
     end=$(date +%s%N)
     elapsed=$((end - start))
     echo "$elapsed" >> cod1_time.txt

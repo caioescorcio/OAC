@@ -11,6 +11,10 @@ extern double * A10;
 extern double * B10;
 extern double * C10;
 
+extern double * A4;
+extern double * B4;
+extern double * C4;
+
 void initialize_matrices();
 
 #endif // MATRICES_H

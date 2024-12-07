@@ -8,17 +8,25 @@ double* C5;
 double* A10;
 double* B10;
 double* C10;
+double* A4;
+double* B4;
+double* C4;
 
 void initialize_matrices() {
-    // Allocate memory for A5 and B5 (5x5 matrix)
+    // Allocate memory for A5, B5, and C5 (5x5 matrix)
     A5 = (double*)malloc(5 * 5 * sizeof(double));
     B5 = (double*)malloc(5 * 5 * sizeof(double));
     C5 = (double*)malloc(5 * 5 * sizeof(double));
 
-    // Allocate memory for A10 and B10 (10x10 matrix)
-    A10 = (double*)malloc(10 * 10 * sizeof(double));
-    B10 = (double*)malloc(10 * 10 * sizeof(double));
-    C10 = (double*)malloc(10 * 10 * sizeof(double));
+    A4 = (double*)malloc(4 * 4 * sizeof(double));
+    B4 = (double*)malloc(4 * 4 * sizeof(double));
+    C4 = (double*)malloc(4 * 4 * sizeof(double));
+
+
+    // Allocate memory for A100, B100, and C100 (100x100 matrix)
+    A10 = (double*)malloc(10 * 10* sizeof(double));
+    B10 = (double*)malloc(10* 10* sizeof(double));
+    C10 = (double*)malloc(100 * 100 * sizeof(double));
 
     // Initialize A5 and B5
     double A5_values[25] = {
@@ -37,43 +45,31 @@ void initialize_matrices() {
         5.5, 4.4, 3.3, 2.2, 1.1
     };
 
+    double A4_values[16] = {
+        1.1, 2.2, 3.3, 4.4, 5.5,
+        6.6, 7.7, 8.8, 9.9, 10.0,
+        11.1, 12.2, 13.3, 14.4, 15.5,
+        16.6
+    };
+
+    double B4_values[16] = {
+        25.5, 24.4, 23.3, 22.2, 21.1,
+        20.0, 19.9, 18.8, 17.7, 16.6,
+        15.5, 14.4, 13.3, 12.2, 11.1,
+        10.0
+    };
+
+
     // Copy values into A5 and B5
     for (int i = 0; i < 25; i++) {
         A5[i] = A5_values[i];
         B5[i] = B5_values[i];
     }
 
-    // Initialize A10 and B10
-    double A10_values[100] = {
-        1.1, 2.2, 3.3, 4.4, 5.5, 6.6, 7.7, 8.8, 9.9, 10.1,
-        11.2, 12.3, 13.4, 14.5, 15.6, 16.7, 17.8, 18.9, 19.0, 20.0,
-        21.1, 22.2, 23.3, 24.4, 25.5, 26.6, 27.7, 28.8, 29.9, 30.0,
-        31.1, 32.2, 33.3, 34.4, 35.5, 36.6, 37.7, 38.8, 39.9, 40.0,
-        41.1, 42.2, 43.3, 44.4, 45.5, 46.6, 47.7, 48.8, 49.9, 50.0,
-        51.1, 52.2, 53.3, 54.4, 55.5, 56.6, 57.7, 58.8, 59.9, 60.0,
-        61.1, 62.2, 63.3, 64.4, 65.5, 66.6, 67.7, 68.8, 69.9, 70.0,
-        71.1, 72.2, 73.3, 74.4, 75.5, 76.6, 77.7, 78.8, 79.9, 80.0,
-        81.1, 82.2, 83.3, 84.4, 85.5, 86.6, 87.7, 88.8, 89.9, 90.0,
-        91.1, 92.2, 93.3, 94.4, 95.5, 96.6, 97.7, 98.8, 99.9, 100.0
-    };
-
-    double B10_values[100] = {
-        100.0, 99.9, 98.8, 97.7, 96.6, 95.5, 94.4, 93.3, 92.2, 91.1,
-        90.0, 89.9, 88.8, 87.7, 86.6, 85.5, 84.4, 83.3, 82.2, 81.1,
-        80.0, 79.9, 78.8, 77.7, 76.6, 75.5, 74.4, 73.3, 72.2, 71.1,
-        70.0, 69.9, 68.8, 67.7, 66.6, 65.5, 64.4, 63.3, 62.2, 61.1,
-        60.0, 59.9, 58.8, 57.7, 56.6, 55.5, 54.4, 53.3, 52.2, 51.1,
-        50.0, 49.9, 48.8, 47.7, 46.6, 45.5, 44.4, 43.3, 42.2, 41.1,
-        40.0, 39.9, 38.8, 37.7, 36.6, 35.5, 34.4, 33.3, 32.2, 31.1,
-        30.0, 29.9, 28.8, 27.7, 26.6, 25.5, 24.4, 23.3, 22.2, 21.1,
-        20.0, 19.9, 18.8, 17.7, 16.6, 15.5, 14.4, 13.3, 12.2, 11.1,
-        10.0, 9.9, 8.8, 7.7, 6.6, 5.5, 4.4, 3.3, 2.2, 1.1
-    };
-
-    // Copy values into A10 and B10
-    for (int i = 0; i < 100; i++) {
-        A10[i] = A10_values[i];
-        B10[i] = B10_values[i];
+    // Initialize A100 and B100
+    for (int i = 0; i < 8 * 10; i++) {
+        A10[i] = (i + 1) * 0.1; // Arbitrary values: 0.1, 0.2, ..., 1000.0
+        B10[i] = 1000.0 - (i * 0.1); // Arbitrary values: 1000.0, 999.9, ..., 0.1
     }
 }
 
