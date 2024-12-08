@@ -1,76 +1,29 @@
 n_iter=10
 
-gcc matrices.c cod2.c -o cod2
-gcc -mavx -march=native matrices.c cod3.c -o cod3
-gcc -mavx -march=native matrices.c cod4.c -o cod4
-gcc -mavx -march=native matrices.c cod5.c -o cod5
 
-rm cod1_time.txt
-rm cod2_time.txt
-rm cod3_time.txt
-rm cod4_time.txt
-rm cod5_time.txt
+gcc cod1.c -o cod1
+gcc -mavx -march=native cod2.c -o cod2
+gcc -mavx -march=native cod3.c -o cod3
+gcc -mavx -march=native cod4.c -o cod4
+gcc -mavx -march=native cod5.c -o cod5
+
+rm execution_times_cod1.txt
+rm execution_times_cod2.txt
+rm execution_times_cod3.txt
+rm execution_times_cod4.txt
+rm execution_times_cod5.txt
 
 
 for i in $(seq 1 $n_iter); do
     echo "Running iteration $i"
-    start=$(date +%s%N)   # Get current time in nanoseconds
-    { time -p python3 cod1.py; } 
-    end=$(date +%s%N)
-    elapsed=$((end - start))
-    echo "$elapsed" >> cod1_time.txt
-
-    start=$(date +%s%N)   # Get current time in nanoseconds
-    { time -p ./cod2; } 
-    end=$(date +%s%N)
-    elapsed=$((end - start))
-    echo "$elapsed" >> cod2_time.txt
-
-    start=$(date +%s%N)   # Get current time in nanoseconds
-    { time -p ./cod3; } 
-    end=$(date +%s%N)
-    elapsed=$((end - start))
-    echo "$elapsed" >> cod3_time.txt
-
-    start=$(date +%s%N)   # Get current time in nanoseconds
-    { time -p ./cod4; } 
-    end=$(date +%s%N)
-    elapsed=$((end - start))
-    echo "$elapsed" >> cod4_time.txt
-
-    start=$(date +%s%N)   # Get current time in nanoseconds
-    { time -p ./cod5; } 
-    end=$(date +%s%N)
-    elapsed=$((end - start))
-    echo "$elapsed" >> cod5_time.txt
+    echo "Execution $i" >> execution_times_cod1.txt
+    echo "Execution $i" >> execution_times_cod2.txt
+    echo "Execution $i" >> execution_times_cod3.txt
+    echo "Execution $i" >> execution_times_cod4.txt
+    echo "Execution $i" >> execution_times_cod5.txt
+    ./cod1
+    ./cod2
+    ./cod3
+    ./cod4
+    ./cod5
 done
-# { time python cod1.py; } 2> cod1_time.txt
-
-# gcc matrices.c cod2.c -o cod2
-# { time ./cod2; } 2> cod2_time.txt
-# { time ./cod2; } 2>> cod2_time.txt
-# { time ./cod2; } 2>> cod2_time.txt
-# { time ./cod2; } 2>> cod2_time.txt
-# { time ./cod2; } 2>> cod2_time.txt
-
-# gcc -mavx -march=native matrices.c cod3.c -o cod3
-# { time ./cod3; } 2> cod3_time.txt
-# { time ./cod2; } 2>> cod2_time.txt
-# { time ./cod2; } 2>> cod2_time.txt
-# { time ./cod2; } 2>> cod2_time.txt
-# { time ./cod2; } 2>> cod2_time.txt
-
-# gcc -mavx -march=native matrices.c cod4.c -o cod4
-# { time ./cod4; } 2> cod4_time.txt
-# { time ./cod2; } 2>> cod2_time.txt
-# { time ./cod2; } 2>> cod2_time.txt
-# { time ./cod2; } 2>> cod2_time.txt
-# { time ./cod2; } 2>> cod2_time.txt
-# { time ./cod2; } 2>> cod2_time.txt
-
-# gcc -mavx -march=native matrices.c cod5.c -o cod5
-# { time ./cod5; } 2> cod5_time.txt
-# { time ./cod2; } 2>> cod2_time.txt
-# { time ./cod2; } 2>> cod2_time.txt
-# { time ./cod2; } 2>> cod2_time.txt
-# { time ./cod2; } 2>> cod2_time.txt

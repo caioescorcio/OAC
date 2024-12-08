@@ -1,40 +1,67 @@
-from plotly import express as px
+import pandas as pd
 import re
-import numpy as np
+import plotly.express as px
 
-# Leitura dos dados
-times = []
-for i in range(5):
-    filename = f"cod{i+1}_time.txt"
-    with open(filename, "r") as f:
-        times.append(f.read())
+# Função para ler tempos médios de cada arquivo
+def read_and_process_file(filename):
+    with open(filename, "r") as file:
+        content = file.read()
+    # Extrair tempos médios por tamanho de matriz
+    pattern = r"Matrix size: (\d+), Time spent: ([\d.]+) seconds"
+    matches = re.findall(pattern, content)
+    times = {}
+    for size, time in matches:
+        size = int(size)
+        time = float(time)  # Tempo já em segundos
+        if size not in times:
+            times[size] = []
+        times[size].append(time)
+    # Calcular a média dos tempos
+    avg_times = {size: sum(times[size]) / len(times[size]) for size in times}
+    return avg_times
 
-# Extrair tempo
-def extract_time(time: str):
-    time = time.split("\n")
-    time = [float(_time)/1000 for _time in time[:-1]]
-    return time
+# Lista de arquivos e códigos
+filenames = [f"execution_times_cod{i+1}.txt" for i in range(5)]
+codes = [f"Código {i+1}" for i in range(5)]
 
-# Extrair tempo
-times = [extract_time(time) for time in times]
-x=[f"Código {i+1}" for i in range(len(times))]
-times_dict = {f"Código {i+1}": time for i, time in enumerate(times)}
+# Ler dados de todos os arquivos
+data = []
+matrix_sizes = set()  # Para armazenar todos os tamanhos de matriz encontrados
+for code, filename in zip(codes, filenames):
+    avg_times = read_and_process_file(filename)
+    for size, avg_time in avg_times.items():
+        # Calcular GFLOPS usando a fórmula
+        gflops = (2 * (size ** 3)) / (avg_time * 1e9)
+        data.append({"Código": code, "Tamanho da Matriz": f"{size}x{size}", "GFLOPS": gflops})
+        matrix_sizes.add(f"{size}x{size}")
 
-# Gráfico (scatter)
-fig = px.scatter(times_dict, title="Tempo de execução dos códigos", labels={"x": "Código", "y": "Tempo (us)"}, orientation="v")
+# Converter para DataFrame
+df = pd.DataFrame(data)
 
-fig.update_layout(
-    xaxis_title="Iteração",
-    yaxis_title="Tempo de Execução (us)",
+# Criar gráfico de barras agrupadas
+fig = px.bar(
+    df,
+    x="Código",
+    y="GFLOPS",
+    color="Tamanho da Matriz",
+    barmode="group",  # Barras agrupadas lado a lado
+    title="Performance em GFLOPS por Código e Tamanho da Matriz",
+    labels={"GFLOPS": "Performance (GFLOPS)", "Código": "Código"}
 )
 
-# marker
-fig.update_traces(marker=dict(size=20)) 
+# Adicionar valores acima das barras com 3 casas decimais
+fig.for_each_trace(lambda trace: trace.update(
+    text=df[df["Tamanho da Matriz"] == trace.name]["GFLOPS"].apply(lambda x: f"{x:.3f}"),  # Exibe 3 casas decimais
+    textposition="outside"  # Posição do texto acima das barras
+))
+
+# Melhorar layout do gráfico
+fig.update_layout(
+    xaxis_title="Código",
+    yaxis_title="Performance (GFLOPS)",
+    legend_title="Tamanho da Matriz",
+    template="plotly_white",
+    bargap=0.2  # Espaçamento entre grupos de barras
+)
+
 fig.show()
-
-# Gráfico (barra)
-px.bar(x = list(times_dict.keys()), y=np.average(list(times_dict.values()), axis=1),
-       title="Tempo de execução dos códigos", orientation="v",
-       labels={"x": "Código", "y": "Tempo médio (us)"}).show()
-
-

@@ -1,0 +1,50 @@
+Execution 1
+Matrix size: 32, Time spent: 0.000105 seconds
+Matrix size: 160, Time spent: 0.013946 seconds
+Matrix size: 480, Time spent: 0.404285 seconds
+Matrix size: 960, Time spent: 4.303739 seconds
+Execution 2
+Matrix size: 32, Time spent: 0.000098 seconds
+Matrix size: 160, Time spent: 0.014524 seconds
+Matrix size: 480, Time spent: 0.413024 seconds
+Matrix size: 960, Time spent: 4.484396 seconds
+Execution 3
+Matrix size: 32, Time spent: 0.000092 seconds
+Matrix size: 160, Time spent: 0.012639 seconds
+Matrix size: 480, Time spent: 0.430101 seconds
+Matrix size: 960, Time spent: 4.776104 seconds
+Execution 4
+Matrix size: 32, Time spent: 0.000102 seconds
+Matrix size: 160, Time spent: 0.015718 seconds
+Matrix size: 480, Time spent: 0.509309 seconds
+Matrix size: 960, Time spent: 4.639657 seconds
+Execution 5
+Matrix size: 32, Time spent: 0.000105 seconds
+Matrix size: 160, Time spent: 0.016733 seconds
+Matrix size: 480, Time spent: 0.536261 seconds
+Matrix size: 960, Time spent: 5.134265 seconds
+Execution 6
+Matrix size: 32, Time spent: 0.000101 seconds
+Matrix size: 160, Time spent: 0.013728 seconds
+Matrix size: 480, Time spent: 0.432968 seconds
+Matrix size: 960, Time spent: 4.616076 seconds
+Execution 7
+Matrix size: 32, Time spent: 0.000092 seconds
+Matrix size: 160, Time spent: 0.013499 seconds
+Matrix size: 480, Time spent: 0.425963 seconds
+Matrix size: 960, Time spent: 4.535236 seconds
+Execution 8
+Matrix size: 32, Time spent: 0.000092 seconds
+Matrix size: 160, Time spent: 0.015682 seconds
+Matrix size: 480, Time spent: 0.454200 seconds
+Matrix size: 960, Time spent: 5.108367 seconds
+Execution 9
+Matrix size: 32, Time spent: 0.000126 seconds
+Matrix size: 160, Time spent: 0.017995 seconds
+Matrix size: 480, Time spent: 0.465595 seconds
+Matrix size: 960, Time spent: 4.678100 seconds
+Execution 10
+Matrix size: 32, Time spent: 0.000095 seconds
+Matrix size: 160, Time spent: 0.015463 seconds
+Matrix size: 480, Time spent: 0.452652 seconds
+Matrix size: 960, Time spent: 5.345395 seconds

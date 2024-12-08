@@ -19,7 +19,7 @@ void dgemm(size_t n, double* A, double* B, double* C)
 }
 
 
- void single_test(int n) {
+ void single_test(int n, FILE* output_file) {
      // Tamanho original da matriz
 
 
@@ -52,6 +52,8 @@ void dgemm(size_t n, double* A, double* B, double* C)
 
     double time_spent = (double)(end - start) / CLOCKS_PER_SEC;
 
+    fprintf(output_file, "Matrix size: %d, Time spent: %.6f seconds\n", n, time_spent);
+
     // Libera a memória
     free(A);
     free(B);
@@ -60,12 +62,19 @@ void dgemm(size_t n, double* A, double* B, double* C)
 }
 
 int main(){
-    single_test(32);
-    single_test(160);
-    single_test(480);
-    single_test(960);
-    return 0;
+    FILE* output_file = fopen("execution_times_cod2.txt", "a");
+    if (!output_file) {
+        perror("Failed to open output file");
+        return EXIT_FAILURE;
+    }
 
+    single_test(32, output_file);
+    single_test(160, output_file);
+    single_test(480, output_file);
+    single_test(960, output_file);
+
+    fclose(output_file);
+    return 0;
 
 }
 
