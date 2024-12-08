@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <x86intrin.h>
+#include <time.h>
 
 #define BLOCKSIZE 32
 #define UNROLL 4
@@ -34,8 +35,8 @@ int round_up_to_multiple(int value, int multiple) {
     return (value + multiple - 1) / multiple * multiple;
 }
 
-int main() {
-    int n = 4; // Tamanho original da matriz
+void single_test(int n) {
+     // Tamanho original da matriz
     int n_aligned = round_up_to_multiple(n, BLOCKSIZE); // Tamanho expandido para múltiplo de 32
 
     // Aloca matrizes alinhadas para AVX, no tamanho expandido
@@ -57,22 +58,29 @@ int main() {
         }
     }
 
-    // Chama a função dgemm no tamanho expandido
-    dgemm(n_aligned, A, B, C);
+ 
+    
 
-    // Extrai os resultados válidos da matriz C
-    //printf("Matriz C (resultado):\n");
-    //for (int i = 0; i < n; i++) {
-       // for (int j = 0; j < n; j++) {
-            //printf("%lf ", C[i * n_aligned + j]);
-        //}
-        //printf("\n");
-    //}
+// Medição do tempo
+    clock_t start = clock();
+    dgemm(n_aligned, A, B, C);
+    clock_t end = clock();
+
+    double time_spent = (double)(end - start) / CLOCKS_PER_SEC;
 
     // Libera a memória
     free(A);
     free(B);
     free(C);
 
+}
+
+int main(){
+    single_test(32);
+    single_test(160);
+    single_test(480);
+    single_test(960);
     return 0;
+
+
 }
