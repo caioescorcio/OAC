@@ -2,9 +2,8 @@
 #include <stdio.h>
 #include <x86intrin.h>
 #include <time.h>
+
 #define BLOCKSIZE 32
-
-
 void do_block (int n, int si, int sj, int sk, double *A, double
  *B, double *C)
  {

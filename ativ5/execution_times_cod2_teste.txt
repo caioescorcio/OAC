@@ -1,0 +1,4 @@
+Matrix size: 32, Time spent: 0.000090 seconds
+Matrix size: 160, Time spent: 0.021953 seconds
+Matrix size: 480, Time spent: 0.204893 seconds
+Matrix size: 960, Time spent: 2.066647 seconds

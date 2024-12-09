@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <x86intrin.h>
 #include <time.h>
+#include <sys/times.h>
+#include <unistd.h>
 
 void dgemm(size_t n, double* A, double* B, double* C)
 {
@@ -41,9 +43,6 @@ void dgemm(size_t n, double* A, double* B, double* C)
             C[i * n + j] = 0.0; // Inicializa C com zeros
         }
     }
-
- 
-    
 
 // Medição do tempo
     clock_t start = clock();

@@ -1,50 +1,50 @@
 Execution 1
-Matrix size: 32, Time spent: 0.000066 seconds
-Matrix size: 160, Time spent: 0.005176 seconds
-Matrix size: 480, Time spent: 0.154239 seconds
-Matrix size: 960, Time spent: 1.562140 seconds
+Matrix size: 32, Time spent: 0.000005 seconds
+Matrix size: 160, Time spent: 0.000539 seconds
+Matrix size: 480, Time spent: 0.017924 seconds
+Matrix size: 960, Time spent: 0.248467 seconds
 Execution 2
-Matrix size: 32, Time spent: 0.000044 seconds
-Matrix size: 160, Time spent: 0.005401 seconds
-Matrix size: 480, Time spent: 0.156254 seconds
-Matrix size: 960, Time spent: 1.582008 seconds
+Matrix size: 32, Time spent: 0.000005 seconds
+Matrix size: 160, Time spent: 0.000532 seconds
+Matrix size: 480, Time spent: 0.017488 seconds
+Matrix size: 960, Time spent: 0.245529 seconds
 Execution 3
-Matrix size: 32, Time spent: 0.000046 seconds
-Matrix size: 160, Time spent: 0.005511 seconds
-Matrix size: 480, Time spent: 0.153023 seconds
-Matrix size: 960, Time spent: 1.482145 seconds
+Matrix size: 32, Time spent: 0.000005 seconds
+Matrix size: 160, Time spent: 0.000529 seconds
+Matrix size: 480, Time spent: 0.017673 seconds
+Matrix size: 960, Time spent: 0.241835 seconds
 Execution 4
-Matrix size: 32, Time spent: 0.000050 seconds
-Matrix size: 160, Time spent: 0.007024 seconds
-Matrix size: 480, Time spent: 0.217421 seconds
-Matrix size: 960, Time spent: 1.701122 seconds
+Matrix size: 32, Time spent: 0.000006 seconds
+Matrix size: 160, Time spent: 0.000880 seconds
+Matrix size: 480, Time spent: 0.029480 seconds
+Matrix size: 960, Time spent: 0.315599 seconds
 Execution 5
-Matrix size: 32, Time spent: 0.000045 seconds
-Matrix size: 160, Time spent: 0.005557 seconds
-Matrix size: 480, Time spent: 0.155891 seconds
-Matrix size: 960, Time spent: 1.510416 seconds
+Matrix size: 32, Time spent: 0.000005 seconds
+Matrix size: 160, Time spent: 0.000544 seconds
+Matrix size: 480, Time spent: 0.020083 seconds
+Matrix size: 960, Time spent: 0.254373 seconds
 Execution 6
-Matrix size: 32, Time spent: 0.000042 seconds
-Matrix size: 160, Time spent: 0.005164 seconds
-Matrix size: 480, Time spent: 0.176815 seconds
-Matrix size: 960, Time spent: 1.565999 seconds
+Matrix size: 32, Time spent: 0.000005 seconds
+Matrix size: 160, Time spent: 0.000562 seconds
+Matrix size: 480, Time spent: 0.024214 seconds
+Matrix size: 960, Time spent: 0.275639 seconds
 Execution 7
-Matrix size: 32, Time spent: 0.000042 seconds
-Matrix size: 160, Time spent: 0.005199 seconds
-Matrix size: 480, Time spent: 0.152673 seconds
-Matrix size: 960, Time spent: 1.486788 seconds
+Matrix size: 32, Time spent: 0.000005 seconds
+Matrix size: 160, Time spent: 0.000558 seconds
+Matrix size: 480, Time spent: 0.018237 seconds
+Matrix size: 960, Time spent: 0.258196 seconds
 Execution 8
-Matrix size: 32, Time spent: 0.000044 seconds
-Matrix size: 160, Time spent: 0.005394 seconds
-Matrix size: 480, Time spent: 0.153543 seconds
-Matrix size: 960, Time spent: 1.714078 seconds
+Matrix size: 32, Time spent: 0.000005 seconds
+Matrix size: 160, Time spent: 0.000553 seconds
+Matrix size: 480, Time spent: 0.019715 seconds
+Matrix size: 960, Time spent: 0.266332 seconds
 Execution 9
-Matrix size: 32, Time spent: 0.000043 seconds
-Matrix size: 160, Time spent: 0.005135 seconds
-Matrix size: 480, Time spent: 0.154643 seconds
-Matrix size: 960, Time spent: 1.997075 seconds
+Matrix size: 32, Time spent: 0.000005 seconds
+Matrix size: 160, Time spent: 0.000557 seconds
+Matrix size: 480, Time spent: 0.024544 seconds
+Matrix size: 960, Time spent: 0.275069 seconds
 Execution 10
-Matrix size: 32, Time spent: 0.000048 seconds
-Matrix size: 160, Time spent: 0.005994 seconds
-Matrix size: 480, Time spent: 0.248956 seconds
-Matrix size: 960, Time spent: 1.954096 seconds
+Matrix size: 32, Time spent: 0.000006 seconds
+Matrix size: 160, Time spent: 0.000568 seconds
+Matrix size: 480, Time spent: 0.022720 seconds
+Matrix size: 960, Time spent: 0.246008 seconds
